@@ -17,6 +17,11 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+//import the routes
+import healthcheckRouter from "./routes/healthcheck.routes.js";
+
+app.use("/api/v1/healthcheck", healthcheckRouter)
+
 app.get("/", (req, res) => {
     res.send("Wellcome to basecampy");
 });
